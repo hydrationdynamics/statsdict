@@ -40,9 +40,7 @@ loguru = "*"
 Pint = "*"
 tabulate = "*"
 typer = "*"
-Pint = "*"
 uncertainties = "*"
-tabulate = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
