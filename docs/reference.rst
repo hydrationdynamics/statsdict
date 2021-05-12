@@ -9,5 +9,5 @@ Reference
 statsdict.__init__
 ---------------
 
-.. automodule:: svante.__init__
+.. automodule:: statsdict.__init__
    :members:
