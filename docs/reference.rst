@@ -11,4 +11,3 @@ statsdict.__init__
 
 .. automodule:: svante.__init__
    :members:
-

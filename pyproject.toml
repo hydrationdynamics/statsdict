@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "statsdict"
-version = "0.0.1"
+version = "0.1.0"
 description = "Saveable dictionary of global stats"
 authors = ["Joel Berendzen <joel@generisbio.com>"]
 license = "BSD-3-Clause"
@@ -62,7 +62,6 @@ reorder-python-imports = "^2.4.0"
 pre-commit-hooks = "^3.4.0"
 sphinx-rtd-theme = "^0.5.2"
 Pygments = "^2.9.0"
-pytest-datadir-mgr = "^1.2.5"
 flynt = "^0.64"
 isort = "^5.8.0"
 sh = "^1.14.1"

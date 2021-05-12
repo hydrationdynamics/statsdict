@@ -139,7 +139,6 @@ def tests(session: Session) -> None:
         "pygments",
         "pytest",
         "pytest-cov",
-        "pytest-datadir-mgr",
         "sh",
     )
     session.run("pytest", "--cov=statsdict", *session.posargs)
@@ -169,7 +168,6 @@ def typeguard(session: Session) -> None:
         "pytest",
         "typeguard",
         "pygments",
-        "pytest-datadir-mgr",
         "sh",
     )
     session.run("pytest", f"--typeguard-packages={package}", *session.posargs)

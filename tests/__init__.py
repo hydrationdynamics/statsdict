@@ -1,37 +1,20 @@
 # -*- coding: utf-8 -*-
-"""Base for pytest testing."""
+"""Standalone Typer app for testing statsdict."""
 # standard library imports
-import contextlib
 import functools
-import os
 from pathlib import Path
 from typing import Callable
+from typing import List
 
 import pytest
 import sh
 from sh import ErrorReturnCode
 
-# third-party imports
-
-# global constants
-TOML_FILE = "dielectric_relaxation.toml"
-COMBINE_INPUTS = [TOML_FILE, "fake_d2o.tsv", "fake_h2o.tsv"]
-COMBINE_OUTPUTS = ["dielectric_relaxation.tsv"]
-STATS_FILE = "statsdict_stats.json"
+STATS_PATH = Path("app_stats.json")
+TESTAPP = sh.python.bake("tests/app.py")
 
 
-@contextlib.contextmanager
-def working_directory(path: str) -> None:
-    """Change working directory in context."""
-    prev_cwd = Path.cwd()
-    os.chdir(path)
-    try:
-        yield
-    finally:
-        os.chdir(prev_cwd)
-
-
-def help_check(subcommand: str) -> None:
+def help_check(subcommand: str) -> str:
     """Test help function for subcommand."""
     print(f"Test {subcommand} help.")
     if subcommand == "global":
@@ -39,13 +22,14 @@ def help_check(subcommand: str) -> None:
     else:
         help_command = [subcommand, "--help"]
     try:
-        output = sh.statsdict(help_command)
+        output = TESTAPP(help_command)
     except ErrorReturnCode as errors:
         print(errors)
         pytest.fail(f"{subcommand} help test failed")
     print(output)
     assert "Usage:" in output
     assert "Options:" in output
+    return output
 
 
 def print_docstring() -> Callable:
@@ -65,12 +49,10 @@ def print_docstring() -> Callable:
     return decorator
 
 
-def run_statsdict(args, component):
-    """Run statsdict with args."""
-    command_string = " ".join(args)
-    print(f"Testing {component} with" + f'"svange {command_string}"')
+def run_app(args: List[str]) -> str:
+    """Run test app with args."""
     try:
-        sh.statsdict(args)
+        output = TESTAPP(args)
     except ErrorReturnCode as errors:
         print(errors)
-        pytest.fail(f"{component} failed")
+    return output
