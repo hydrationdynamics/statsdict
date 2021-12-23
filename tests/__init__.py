@@ -8,16 +8,10 @@ from pathlib import Path
 from typing import Callable
 
 import pytest
-import sh
-from sh import ErrorReturnCode
 
 # third-party imports
 
 # global constants
-TOML_FILE = "dielectric_relaxation.toml"
-COMBINE_INPUTS = [TOML_FILE, "fake_d2o.tsv", "fake_h2o.tsv"]
-COMBINE_OUTPUTS = ["dielectric_relaxation.tsv"]
-STATS_FILE = "statsdict_stats.json"
 
 
 @contextlib.contextmanager
@@ -29,23 +23,6 @@ def working_directory(path: str) -> None:
         yield
     finally:
         os.chdir(prev_cwd)
-
-
-def help_check(subcommand: str) -> None:
-    """Test help function for subcommand."""
-    print(f"Test {subcommand} help.")
-    if subcommand == "global":
-        help_command = ["--help"]
-    else:
-        help_command = [subcommand, "--help"]
-    try:
-        output = sh.statsdict(help_command)
-    except ErrorReturnCode as errors:
-        print(errors)
-        pytest.fail(f"{subcommand} help test failed")
-    print(output)
-    assert "Usage:" in output
-    assert "Options:" in output
 
 
 def print_docstring() -> Callable:
@@ -63,14 +40,3 @@ def print_docstring() -> Callable:
         return wrapper
 
     return decorator
-
-
-def run_statsdict(args, component):
-    """Run statsdict with args."""
-    command_string = " ".join(args)
-    print(f"Testing {component} with" + f'"svange {command_string}"')
-    try:
-        sh.statsdict(args)
-    except ErrorReturnCode as errors:
-        print(errors)
-        pytest.fail(f"{component} failed")
