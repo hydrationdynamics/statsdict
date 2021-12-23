@@ -10,14 +10,14 @@ import nox
 try:
     from nox_poetry import Session
     from nox_poetry import session
-except ImportError:
+except ImportError as exc:
     message = f"""\
     Nox failed to import the 'nox-poetry' package.
 
     Please install it using the following command:
 
     {sys.executable} -m pip install nox-poetry"""
-    raise SystemExit(dedent(message))
+    raise SystemExit(dedent(message)) from exc
 
 
 package = "statsdict"

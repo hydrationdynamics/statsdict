@@ -151,7 +151,7 @@ class StatsDict(object):
 
     def __init__(  # noqa: C901
         self,
-        logger: Optional[loguru.Logger] = None,
+        logger: Optional[loguru.logger] = None,
         module_name: Optional[str] = None,
         save_dir: Optional[str] = None,
         title: Optional[str] = None,
