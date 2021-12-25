@@ -72,6 +72,7 @@ black = "*"
 flake8-rst-docstrings = "*"
 sphinx-click = "*"
 icecream = "*"
+types-tabulate = "^0.8.3"
 
 [tool.poetry.scripts]
 statsdict = "statsdict.__main__:main"

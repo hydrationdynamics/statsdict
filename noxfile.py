@@ -122,7 +122,7 @@ def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or ["statsdict"]
     session.install(".")
-    session.install("mypy", "pandas-stubs", "pytest")
+    session.install("mypy", "pandas-stubs", "pytest", "types-tabulate")
     session.run("mypy", *args)
     if not session.posargs:
         session.run(
