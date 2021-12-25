@@ -56,17 +56,13 @@ StatsDict: Save Run Stats
 Features
 --------
 
-* Combines rates from multiple input `TSV files`_ using `pandas`_
-* Handles `uncertainties`_ in rates and temperatures
-* Creates `Arrhenius plots`_ using `Matplotlib`_
-* Fits activation enthalpies and prefactors to rates
-* Optionally, plots ratios of two rates
+* Save global run statistics to a JSON file suitable for use with a web service.
 
 
 Requirements
 ------------
 
-* Tested on Python 3.7 to 3.9 on Linux and Mac
+* Tested on Python 3.8 to 3.10 on Linux and Mac
 
 
 Installation
@@ -112,11 +108,6 @@ Credits
 StatsDict was written by Joel Berendzen.
 
 
-.. _TSV files: https://en.wikipedia.org/wiki/Tab-separated_values
-.. _pandas: https://pandas.pydata.org/
-.. _uncertainties: https://uncertainties-python-package.readthedocs.io/en/latest/user_guide.html
-.. _Arrhenius plots: https://en.wikipedia.org/wiki/Arrhenius_plot
-.. _Matplotlib: https://matplotlib.org/
 .. _BSD 3-Clause license: https://opensource.org/licenses/BSD-3-Clause
 .. _PyPI: https://pypi.org/
 .. _file an issue: https://github.com/joelb123/statsdict/issues

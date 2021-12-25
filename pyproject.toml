@@ -15,26 +15,20 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Topic :: Scientific/Engineering :: Chemistry"
 ]
 keywords = [
-    "science",
-    "chemistry",
-    "physical chemistry",
-    "kinetics",
-    "rate coefficients",
-    "temperature dependence"
+    "statistics",
 ]
 
 [tool.poetry.urls]
 Changelog = "https://github.com/joelb123/statsdict/releases"
 
 [tool.poetry.dependencies]
-# python restricted to <3.10 until a new version of pydantic is released
-python = "^3.7.1,<3.10"
+python = "^3.8.0,<4.0"
 attrs = "*"
 loguru = "*"
 Pint = "*"
@@ -63,23 +57,21 @@ pre-commit-hooks = "*"
 sphinx-rtd-theme = "*"
 Pygments = "*"
 pytest-datadir-mgr = "*"
-flynt = "*"
 isort = "*"
-sh = "*"
 nox-poetry = "*"
 pytest-cov = "*"
 black = "*"
 flake8-rst-docstrings = "*"
 sphinx-click = "*"
 icecream = "*"
-types-tabulate = "^0.8.3"
+types-tabulate = "*"
 
 [tool.poetry.scripts]
 statsdict = "statsdict.__main__:main"
 
 [tool.black]
 line-length = 79
-target-version = ['py38', 'py39']
+target-version = ['py38', 'py39', 'py310']
 include = '\.pyi?$'
 exclude = '''
 /(

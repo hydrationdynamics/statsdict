@@ -21,7 +21,7 @@ except ImportError as exc:
 
 
 package = "statsdict"
-python_versions = ["3.9", "3.8"]
+python_versions = ["3.10", "3.9", "3.8"]
 nox.options.sessions = (
     "pre-commit",
     "safety",
@@ -98,7 +98,6 @@ def precommit(session: Session) -> None:
         "flake8-bugbear",
         "flake8-docstrings",
         "flake8-rst-docstrings",
-        "pandas-stubs",
         "pep8-naming",
         "pre-commit",
         "pre-commit-hooks",
@@ -122,7 +121,7 @@ def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or ["statsdict"]
     session.install(".")
-    session.install("mypy", "pandas-stubs", "pytest", "types-tabulate")
+    session.install("mypy", "pytest", "types-tabulate")
     session.run("mypy", *args)
     if not session.posargs:
         session.run(
