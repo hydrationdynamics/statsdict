@@ -139,6 +139,7 @@ def tests(session: Session) -> None:
         "pytest",
         "pytest-cov",
         "pytest-datadir-mgr",
+        "loguru-mypy",
     )
     session.run(
         "pytest",

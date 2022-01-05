@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """Tests for basic CLI function."""
-# third-party imports
+from __future__ import annotations
+
+import sys
+
+import loguru
+from loguru import logger
 from statsdict import Stat
 from statsdict import StatsDict
 
@@ -16,7 +21,16 @@ def test_stats(tmp_path):
             "basepairs = [dimensionless] = bp",
             "kilobasepairs = 1000 * basepairs = kbp",
         ]
-        stats = StatsDict()
+
+        def stderr_format_func(record: loguru.Record) -> str:
+            """Do level-sensitive formatting."""
+            if record["level"].no < 25:
+                return "<level>{message}</level>\n"
+            return "<level>{level}</level>: <level>{message}</level>\n"
+
+        logger.remove()
+        logger.add(sys.stderr, level="DEBUG", format=stderr_format_func)
+        stats = StatsDict(logger=loguru.logger)
 
         @stats.auto_save_and_report
         def define_some_stats() -> None:
@@ -44,3 +58,6 @@ def test_stats(tmp_path):
             print(stats)
 
         define_some_stats()
+        define_some_stats()
+        define_some_stats()
+        logger.info("statsdict test done")
