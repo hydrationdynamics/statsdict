@@ -22,7 +22,7 @@ from typing import TypeVar
 from typing import Union
 
 import attr
-import loguru  # type: ignore
+import loguru
 import typer
 from pint import UnitRegistry  # type: ignore
 from tabulate import tabulate

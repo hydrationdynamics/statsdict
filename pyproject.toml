@@ -65,6 +65,7 @@ flake8-rst-docstrings = "*"
 sphinx-click = "*"
 icecream = "*"
 types-tabulate = "*"
+loguru-mypy = "*"
 
 [tool.poetry.scripts]
 statsdict = "statsdict.__main__:main"

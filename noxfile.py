@@ -1,8 +1,8 @@
 """Nox sessions."""
-import random
 import shutil
 import sys
 from pathlib import Path
+from random import randint
 from textwrap import dedent
 
 import nox
@@ -121,7 +121,7 @@ def mypy(session: Session) -> None:
     """Type-check using mypy."""
     args = session.posargs or ["statsdict"]
     session.install(".")
-    session.install("mypy", "pytest", "types-tabulate")
+    session.install("mypy", "pytest", "types-tabulate", "loguru-mypy")
     session.run("mypy", *args)
     if not session.posargs:
         session.run(
@@ -140,10 +140,14 @@ def tests(session: Session) -> None:
         "pytest-cov",
         "pytest-datadir-mgr",
     )
-    session.run("pytest", "--cov=statsdict", *session.posargs)
-    cov_path = Path(".coverage")
-    if cov_path.exists():
-        cov_path.rename(f".coverage.{random.randrange(100000)}")  # noqa: S311
+    session.run(
+        "pytest",
+        "--cov=statsdict",
+        *session.posargs,
+        env={
+            "COVERAGE_FILE": f".coverage.{randint(0,99999999)}"  # noqa: S311
+        },
+    )
 
 
 @session
@@ -169,6 +173,7 @@ def typeguard(session: Session) -> None:
         "pygments",
         "pytest-datadir-mgr",
         "types-tabulate",
+        "loguru-mypy",
     )
     session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
 
