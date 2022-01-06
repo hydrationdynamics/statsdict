@@ -30,7 +30,7 @@ StatsDict: Save Run Stats
 .. |Coverage| image:: https://codecov.io/gh/hydrationdynamics/statsdict/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/hydrationdynamics/statsdict
     :alt: Codecov.io test coverage
-.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/d9c8687d3c544049a293b2faf8919c07
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/b27a34201f26408f96e5e33664cb7655
     :target: https://www.codacy.com/gh/hydrationdynamics/statsdict?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hydrationdynamics/statsdict&amp;utm_campaign=Badge_Grade
     :alt: Codacy.io grade
 .. |Issues| image:: https://img.shields.io/github/issues/hydrationdynamics/statsdict.svg
