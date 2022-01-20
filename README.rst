@@ -22,7 +22,7 @@ StatsDict: Save Run Stats
    :target: https://github.com/hydrationdynamics/statsdict
    :alt: PYPI download rate
 .. |License| image:: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
-    :target: https://github.com/hydrationdynamics/statsdict/blob/master/LICENSE.txt
+    :target: https://github.com/hydrationdynamics/statsdict/blob/main/LICENSE.txt
     :alt: License terms
 .. |Tests| image:: https://github.com/hydrationdynamics/statsdict/workflows/Tests/badge.svg
    :target: https://github.com/hydrationdynamics/statsdict/actions?workflow=Tests
@@ -55,8 +55,8 @@ StatsDict: Save Run Stats
 
 Features
 --------
-
-* Save global run statistics to a JSON file suitable for use with a web service.
+Dictionary of per-run global statistics with uncertainties and units that can be saved to a 
+JSON file, restored, updated, and queried.
 
 
 Requirements
