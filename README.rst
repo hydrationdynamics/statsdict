@@ -3,7 +3,7 @@ StatsDict: Save Run Stats
 =========================
 .. badges-begin
 
-| |PyPi| |Python Version| |Repo| |Downloads| |Dlrate|
+| |PyPi| |Python Version| |Repo| |Dlrate|
 | |License| |Tests| |Coverage| |Codacy| |Issues| |Health|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/statsdict.svg
@@ -15,11 +15,8 @@ StatsDict: Save Run Stats
 .. |Repo| image:: https://img.shields.io/github/last-commit/hydrationdynamics/statsdict
     :target: https://github.com/hydrationdynamics/statsdict
     :alt: GitHub repository
-.. |Downloads| image:: https://pepy.tech/badge/statsdict
-     :target: https://pepy.tech/project/statsdict
-     :alt: Download stats
 .. |Dlrate| image:: https://img.shields.io/pypi/dm/statsdict
-   :target: https://github.com/hydrationdynamics/statsdict
+   :target: https://pypistats.org/projects/statsdict
    :alt: PYPI download rate
 .. |License| image:: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
     :target: https://github.com/hydrationdynamics/statsdict/blob/main/LICENSE.txt
@@ -55,7 +52,7 @@ StatsDict: Save Run Stats
 
 Features
 --------
-Dictionary of per-run global statistics with uncertainties and units that can be saved to a 
+Dictionary of per-run global statistics with uncertainties and units that can be saved to a
 JSON file, restored, updated, and queried.
 
 
