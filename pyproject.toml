@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "statsdict"
-version = "0.1.6"
+version = "0.1.7"
 description = "Saveable dictionary of global stats"
 authors = ["Joel Berendzen <joel@generisbio.com>"]
 license = "BSD-3-Clause"
