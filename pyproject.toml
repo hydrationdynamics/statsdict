@@ -15,9 +15,9 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Scientific/Engineering :: Chemistry"
 ]
 keywords = [
@@ -29,43 +29,43 @@ Changelog = "https://github.com/joelb123/statsdict/releases"
 
 [tool.poetry.dependencies]
 python = "^3.8.0,<4.0"
-attrs = "*"
-loguru = "*"
-Pint = "*"
-typer = "*"
-uncertainties = "*"
-tabulate = "*"
+attrs = ">=21.4.0"
+loguru = ">=0.6.0"
+Pint = ">=0.19.2"
+typer = ">=0.4.1"
+uncertainties = ">=3.1.6"
+tabulate = ">=0.8.9"
 
 [tool.poetry.dev-dependencies]
-pytest = "*"
-coverage = {extras = ["toml"], version = "*"}
-safety = "*"
-mypy = "*"
-typeguard = "*"
-xdoctest = {extras = ["colors"], version = "*"}
-sphinx = "*"
-sphinx-autobuild = "*"
-pre-commit = "*"
-flake8 = "*"
-flake8-bandit = "*"
-flake8-bugbear = "*"
-flake8-docstrings = "*"
-pep8-naming = "*"
-darglint = "*"
-reorder-python-imports = "*"
-pre-commit-hooks = "*"
-sphinx-rtd-theme = "*"
-Pygments = "*"
-pytest-datadir-mgr = "*"
-isort = "*"
-nox-poetry = "*"
-pytest-cov = "*"
-black = "*"
-flake8-rst-docstrings = "*"
-sphinx-click = "*"
-icecream = "*"
-types-tabulate = "*"
-loguru-mypy = "*"
+black = ">=22.3.0"
+coverage = {extras = ["toml"], version = ">=6.3.2"}
+darglint = ">=1.8.1"
+flake8 = ">=4.0.1"
+flake8-bandit = ">=3.0.0"
+flake8-bugbear = ">=22.4.25"
+flake8-docstrings = ">=1.6.0"
+flake8-rst-docstrings = ">=0.2.5"
+icecream = ">=2.1.2"
+isort = ">=5.10.1"
+loguru-mypy = ">=0.0.4"
+mypy = ">=0.950"
+nox-poetry = ">=0.9.0"
+pep8-naming = ">=0.12.1"
+pre-commit = ">=2.18.1"
+pre-commit-hooks = ">=4.2.0"
+pygments = ">=2.12.0"
+pytest = ">=7.1.2"
+pytest-datadir-mgr = ">=1.3.1"
+reorder-python-imports = ">=3.1.0"
+safety = ">=1.10.3"
+sphinx-rtd-theme = ">=1.0.0"
+typeguard = ">=2.13.3"
+pytest-cov = ">=3.0.0"
+sphinx = ">=4.5.0"
+sphinx-autobuild = ">=2021.3.14"
+sphinx-click = ">=4.0.3"
+types-tabulate = ">=0.8.8"
+xdoctest = {extras = ["colors"], version = ">=1.0.0"}
 
 [tool.poetry.scripts]
 statsdict = "statsdict.__main__:main"
