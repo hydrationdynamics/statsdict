@@ -114,8 +114,8 @@ class Stat(object):
         if not hasattr(self, "units"):
             return ""
         else:
-            units = UREG(self.units)
-            return f"{units.units:~P}"
+            units = UREG(self.units).units  # type: ignore
+            return f"{units:~P}"
 
     def format_value(self) -> str:
         """Format value with optional uncertainty."""
@@ -363,7 +363,7 @@ class StatsDict(object):
                 self._unit_defs.append(definition)
             base_unit = definition.split()[0]
             if base_unit not in UREG:
-                UREG.define(definition)
+                UREG.define(definition)  # type: ignore
 
     def configure_report(
         self,
