@@ -7,7 +7,6 @@ author = "Joel Berendzen"
 copyright = f"{datetime.now().year}, {author}"
 extensions = [
     "sphinx.ext.autodoc",
-    "sphinx.ext.napoleon",
     "sphinx_rtd_theme",
     "sphinx_click",
 ]
